@@ -2,8 +2,13 @@
 
 ƒл€ запуска задани€ можно воспользоватьс€ `docker-compose`
 
-`docker-compose up --build`
+ƒл€ этого необходимо клонировать репозиторий
 
+`https://github.com/AntonOvsyannikov/nteh.git`
+
+перейти в директорию репозитори€ и запустить команду
+
+`docker-compose up --build`
 
 “акже задание запущено на сервере [mebeletron.ru](http://mebeletron.ru:8000/)
 
