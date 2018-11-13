@@ -1,6 +1,5 @@
 import requests
 from requests_toolbelt.utils import dump
-from simplejson import JSONDecodeError
 
 API_TOKEN = 'm3MLGHi8SgbJOFQkC3-h-S2mpoajCRtO'
 API_URL = 'https://api.findface.pro/v1/'
@@ -40,7 +39,7 @@ def _service(url, method='GET', data=None, files=None):
                 r.raise_for_status()
             except requests.exceptions.RequestException as e:
                 raise ServiceException("{}: {}".format(code, reason))
-        except JSONDecodeError:
+        except ValueError:
             r.raise_for_status()
 
     return r
