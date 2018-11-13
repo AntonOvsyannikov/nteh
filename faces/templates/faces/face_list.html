@@ -1,0 +1,29 @@
+{% extends 'faces/base.html' %}
+
+{% block content %}
+
+<h2>Найденные лица</h2><hr>
+
+{% for f in face_list %}
+
+<a href="{% url 'faces:face_detail' f.id %}">
+    <img src="{{ f.thumbnail }}" class="img-thumbnail"/>
+    {{ f.name}}
+
+
+</a>
+
+{% if delete %}
+<a href="{% url 'faces:face_delete' f.id %}" class="btn btn-danger pull-right glyphicon glyphicon-remove"></a>
+{% endif %}
+
+{% if f.lowconfidence %}
+(но это неточно!)
+{% endif %}
+
+<hr>
+
+{% endfor %}
+
+
+{% endblock %}

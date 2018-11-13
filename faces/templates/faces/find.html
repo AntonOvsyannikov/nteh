@@ -1,0 +1,18 @@
+{% extends 'faces/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<h2>Найти человека по фотографии</h2><hr>
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Найти</button>
+</form>
+
+
+{% endblock %}
+

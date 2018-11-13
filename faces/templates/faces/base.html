@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <style>
+        .top-buffer { margin-top:20px; }
+    </style>
+
+    <title>NTechLab Faces - Тестовое задание</title>
+</head>
+<body>
+
+<div class="container top-buffer">
+    <a href="{% url 'faces:face_add' %}" class="btn btn-primary">Добавить фотографию в базу</a>
+    <a href="{% url 'faces:find' %}" class="btn btn-primary">Найти человека по фотографии</a>
+    <!--<a href="{% url 'faces:misc' %}" class="btn btn-primary">Misc</a>-->
+    <a href="{% url 'faces:face_list' %}" class="btn btn-primary">Список загруженных Вами фотографий</a>
+
+    <a href="{% url 'faces:clean' %}" class="btn btn-danger pull-right">Удалить все загруженные Вами фото</a>
+
+    <hr><br>
+
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

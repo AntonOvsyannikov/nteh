@@ -1,0 +1,33 @@
+{% extends 'faces/base.html' %}
+
+{% block content %}
+<h2>Информация о фотографии</h2><hr>
+
+
+<div class="row">
+    <div class="col-lg-4">
+        <img src="{{face.thumbnail}}" class="img-thumbnail"/>
+    </div>
+    <div class="col-lg-8">
+        <h3>{{face.name}}</h3>
+        <hr>
+        <!--{{face.meta}}-->
+
+        {% if face.meta.company %}
+        <h4>Компания</h4>
+        {{face.meta.company}}
+        <hr>
+        {% endif %}
+
+        {% if face.meta.badge %}
+        <h4>Должность</h4>
+        {{face.meta.badge}}
+        <hr>
+        {% endif %}
+
+    </div>
+</div>
+
+
+{% endblock %}
+
